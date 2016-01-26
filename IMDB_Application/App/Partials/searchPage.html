@@ -1,0 +1,21 @@
+<div id = "pagewrapper" class = "searchPage">
+	<h1>Movie Search App</h1>
+	<div id = "searchsection">
+		<center><label>Search</label>&nbsp;&nbsp;<input type = "text" id = "searcharea" placeholder = "Type to search ..." ng-model = "searchedmovie" ng-change = "searchMovie()"/> 
+		</center>
+	</div>
+    <div id = "descriptionsection" ng-if = "!movies.length" >
+        <br /><br />
+        <h2>Welcome To Movie search App.. </h2><br />
+        you can search and find any film here.. And get its details also..
+    </div>
+    <div id = "contentsection" ng-if = "movie.length != 0" data-ng-repeat = "movie in movies" > 
+        <a  href = "#/detailsPage.html/{{movie.imdbID}}">
+        <h3>{{movie.Title}}</h3>
+        <br />
+        Year : {{movie.Year}}
+        </a>
+    </div>
+  
+</div>
+
